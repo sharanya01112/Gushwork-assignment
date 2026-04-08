@@ -1,0 +1,162 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #eef2f3, #8e9eab);
+  color: #333;
+}
+
+/* navbar */
+.navbar {
+  position: fixed;
+  top: -80px;
+  width: 100%;
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
+/* cards */
+.cards {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.2s;
+}
+
+/* gallery section */
+.gallery {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+/* center carousel container */
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+
+/* carousel track */
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+/* images */
+.carousel-track img {
+  width: 250px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+}
+
+.carousel-track img:hover {
+  transform: scale(1.05);
+}
+
+/* zoom preview */
+.zoom-preview {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  width: 350px;
+  height: 350px;
+  background: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.zoom-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-track img {
+    width: 200px;
+  }
+
+  .zoom-preview {
+    display: none !important;
+  }
+}
